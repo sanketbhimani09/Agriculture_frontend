@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <>
-    <h1>Hello Sanket from yash</h1>
+    <h1>Hello Sanket from yash...</h1>
     </>
 );
 
