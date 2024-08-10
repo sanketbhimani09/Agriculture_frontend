@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Home = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    //ad
+    
     useEffect(() => {
         const menuPanel = document.querySelector('.shy-menu-panel');
         if (menuPanel) { 
