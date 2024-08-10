@@ -5,7 +5,7 @@ const Home = () => {
 
     useEffect(() => {
         const menuPanel = document.querySelector('.shy-menu-panel');
-        if (menuPanel) { // Check if menuPanel is not null
+        if (menuPanel) { 
             if (isMenuOpen) {
                 menuPanel.classList.add('open');
             } else {
