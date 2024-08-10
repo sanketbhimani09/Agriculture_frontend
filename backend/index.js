@@ -6,7 +6,7 @@ const app = express();
 const port = 5000;
 
 app.use(express.json());
-// app.use(cors());
+// app.use(cors()); 
 mongoose.connect("mongodb://localhost:27017/griculture");
 
 const technologyModel=require('./technology');
