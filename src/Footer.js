@@ -1,10 +1,11 @@
 import React from 'react';
-import './Footer.css'; // Assuming you have a CSS file for styling
+import './Footer.css';
 
 const Footer = () => {
     return (
         <>
             <div align="center">
+                <br/>
                 <h3 class="agileits_w3layouts_head">Grow <span>With</span> Us.</h3>
                 <img src="/assets/images/1.png" alt="Blog Post 1" className="img-responsive" />
             </div>

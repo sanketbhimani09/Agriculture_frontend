@@ -1,13 +1,17 @@
-import React from "react";
-import Home from "./home";
-import Footer from "./Footer";
+// Layout.js
+import React from 'react';
+import Header from './Header';
+import Footer from './Footer';
 import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
     return (
         <>
-            <Home />
-            <Outlet />
+            <Header />
+            <main>
+
+                <Outlet /> {/* This renders the routed components */}
+            </main>
             <Footer />
         </>
     );

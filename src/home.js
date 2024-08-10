@@ -5,10 +5,12 @@ const Home = () => {
 
     useEffect(() => {
         const menuPanel = document.querySelector('.shy-menu-panel');
-        if (isMenuOpen) {
-            menuPanel.classList.add('open');
-        } else {
-            menuPanel.classList.remove('open');
+        if (menuPanel) { // Check if menuPanel is not null
+            if (isMenuOpen) {
+                menuPanel.classList.add('open');
+            } else {
+                menuPanel.classList.remove('open');
+            }
         }
     }, [isMenuOpen]);
 
@@ -17,12 +19,12 @@ const Home = () => {
     };
 
     const cardStyle = {
-        height: '400px', // Adjust the height as needed
+        height: '400px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        backgroundSize: 'cover', // Ensure the image covers the entire card
-        backgroundPosition: 'center', // Center the background image
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
     };
 
     const card1Style = {
@@ -32,12 +34,12 @@ const Home = () => {
 
     const card2Style = {
         ...cardStyle,
-        backgroundImage: 'url("https://www.thegef.org/sites/default/files/2024-03/shutterstock_1827169505_rice_pesticides.jpg")', // Replace with your image
+        backgroundImage: 'url("https://www.thegef.org/sites/default/files/2024-03/shutterstock_1827169505_rice_pesticides.jpg")',
     };
 
     const card3Style = {
         ...cardStyle,
-        backgroundImage: 'url("https://media.istockphoto.com/id/1128687123/photo/shopping-bag-full-of-fresh-vegetables-and-fruits.jpg?s=612x612&w=0&k=20&c=jXInOVcduhEnfuUVffbUacldkF5CwAeThD3MDUXCItM=")', // Replace with your image
+        backgroundImage: 'url("https://media.istockphoto.com/id/1128687123/photo/shopping-bag-full-of-fresh-vegetables-and-fruits.jpg?s=612x612&w=0&k=20&c=jXInOVcduhEnfuUVffbUacldkF5CwAeThD3MDUXCItM=")',
     };
 
     return (
@@ -52,41 +54,26 @@ const Home = () => {
             {/* Importing external JS */}
             <script type="text/javascript" src="/assets/js/jquery-2.1.4.min.js"></script>
 
+            {/* Removed Header for this part */}
+
             <div className="banner">
                 <div className="container">
-                    <div className="w3_agileits_banner_main_grid">
-                        <div className="shy-menu is-open" >
-                            <div className="shy-menu-panel">
-                                <nav className="menu menu--horatio link-effect-8" id="link-effect-8" style={{ paddingLeft: "60px" }}>
-                                    <ul className="w3layouts_menu__list">
-                                        <li className="active"><a href="index.html">Home</a></li>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="services.html">Services</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                        <li><a href="contact.html">Contact Us</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div className="clearfix"> </div>
-                        </div>
-                        <div className="clearfix"> </div>
-                    </div>
-                    <div className="w3_banner_info" >
+                    <div className="w3_banner_info">
                         <div className="w3_banner_info_grid">
                             <h3 className="test" style={{ fontSize: "50px" }}>What is Agriculture?</h3>
                             <p style={{
                                 fontSize: "17px",
-                                backgroundColor: "rgba(90, 90, 90, 0.7)", // Light gray with 50% opacity
-                                padding: "10px", // Optional: Adds padding around the text
-                                borderRadius: "5px" // Optional: Adds rounded corners
+                                backgroundColor: "rgba(90, 90, 90, 0.7)",
+                                padding: "10px",
+                                borderRadius: "5px"
                             }}>
-                                <span style={{fontSize:"20px"}}>&#8618;</span> &nbsp;To answer the question of what is agriculture, let's look at the definition first, then we can dive into history, learn how agriculture started and how it looks today.<br />
-                                <span style={{fontSize:"20px"}}>&#8618;</span> &nbsp;Agriculture is the science of farming, it includes the cultivation of soil for growing crops, rearing animals to provide food, wool and other products, and harvesting grown crops as effectively as possible.<br />
-                                <span style={{fontSize:"20px"}}>&#8618;</span> &nbsp;It is agriculture that has allowed human civilization to expand to the great heights that it is at today, and it is agriculture that took humanity from the simple hunter-gatherer way of life to a more complex society.
+                                <span style={{ fontSize: "20px" }}>&#8618;</span> &nbsp;To answer the question of what is agriculture, let's look at the definition first, then we can dive into history, learn how agriculture started and how it looks today.<br />
+                                <span style={{ fontSize: "20px" }}>&#8618;</span> &nbsp;Agriculture is the science of farming, it includes the cultivation of soil for growing crops, rearing animals to provide food, wool and other products, and harvesting grown crops as effectively as possible.<br />
+                                <span style={{ fontSize: "20px" }}>&#8618;</span> &nbsp;It is agriculture that has allowed human civilization to expand to the great heights that it is at today, and it is agriculture that took humanity from the simple hunter-gatherer way of life to a more complex society.
                             </p>
                             <ul>
                                 <li><a href="contact.html" className="w3l_contact">Contact Us</a></li>
-                                <li style={{marginLeft:"5px"}}><a href="#" className="w3ls_more" data-toggle="modal" data-target="#myModal">Read More</a></li>
+                                <li style={{ marginLeft: "5px" }}><a href="#" className="w3ls_more" data-toggle="modal" data-target="#myModal">Read More</a></li>
                             </ul>
                         </div>
                     </div>
