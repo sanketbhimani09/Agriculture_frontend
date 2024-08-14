@@ -1,23 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const Home = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    
-    useEffect(() => {
-        const menuPanel = document.querySelector('.shy-menu-panel');
-        if (menuPanel) { 
-            if (isMenuOpen) {
-                menuPanel.classList.add('open');
-            } else {
-                menuPanel.classList.remove('open');
-            }
-        }
-    }, [isMenuOpen]);
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
-
     const cardStyle = {
         height: '400px',
         display: 'flex',
@@ -71,10 +54,7 @@ const Home = () => {
                                 <span style={{ fontSize: "20px" }}>&#8618;</span> &nbsp;Agriculture is the science of farming, it includes the cultivation of soil for growing crops, rearing animals to provide food, wool and other products, and harvesting grown crops as effectively as possible.<br />
                                 <span style={{ fontSize: "20px" }}>&#8618;</span> &nbsp;It is agriculture that has allowed human civilization to expand to the great heights that it is at today, and it is agriculture that took humanity from the simple hunter-gatherer way of life to a more complex society.
                             </p>
-                            <ul>
-                                <li><a href="contact.html" className="w3l_contact">Contact Us</a></li>
-                                <li style={{ marginLeft: "5px" }}><a href="#" className="w3ls_more" data-toggle="modal" data-target="#myModal">Read More</a></li>
-                            </ul>
+                           
                         </div>
                     </div>
                 </div>
@@ -97,7 +77,11 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-
+            <div align="center">
+                <br />
+                <h3 class="agileits_w3layouts_head">Three main type of <span>Agriculture</span></h3>
+                <img src="/assets/images/1.png" alt="Blog Post 1" className="img-responsive" />
+            </div>
             <div className="banner-bottom">
                 <div className="col-md-4 agileits_banner_bottom_left" style={card1Style}>
                     <div className="agileinfo_banner_bottom_pos">
@@ -147,7 +131,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className="clearfix"> </div>
+                <div className="clearfix"></div>
             </div>
         </div>
     );

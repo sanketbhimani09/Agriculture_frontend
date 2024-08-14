@@ -1,12 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
-// const cors = require('cors');
+const cors = require('cors');
 //demo
 const app = express();
 const port = 5000;
 
 app.use(express.json());
-// app.use(cors()); 
+app.use(cors()); 
 mongoose.connect("mongodb://localhost:27017/griculture");
 
 const technologyModel=require('./technology');
@@ -42,6 +42,20 @@ app.post("/add-tech", async (req, res) => {
         res.status(500).send("Error saving contact");
     }
 });
+
+app.delete("/delete-tech/:id",async(req,res)=>{
+    try {
+        const deletedTech = await technologyModel.findByIdAndDelete(req.params.id);
+        if (deletedTech) {
+            res.json({ message: "Technology deleted successfully" });
+        } else {
+            res.status(404).json({ message: "Technology not found" });
+        }
+    } catch (error) {
+        console.error("Error deleting Technology:", error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+})
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);

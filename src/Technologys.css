@@ -1,0 +1,9 @@
+.backimage{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('https://images.unsplash.com/photo-1471532027614-154d124ccf57?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover; /* Cover the entire screen */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Make the background image fixed */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    min-height: 100vh; /* Ensure it covers the viewport height */
+    padding: 20px; /* Add padding if needed */
+}
