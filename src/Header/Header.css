@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0; /* Ensure there's no extra margin around the body */
+    padding-top: 65px;
+}
+#cartt:hover{
+    color: black;
+}
+.topnav {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 65px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    z-index: 2;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2); /* Adds shadow for visual separation */
+}
+.nav-links {
+    display: flex; /* Align links horizontally */
+    gap: 15px; /* Spacing between the links */
+    justify-content: center; /* Center the nav items */
+    align-items: center; /* Vertically align items */
+}
+
+.nav-links a {
+    position: relative;
+    display: inline-block; /* Allow horizontal alignment */
+    text-transform: uppercase;
+    /* color: #f2f2f2; */
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    transition: 1s;
+    z-index: 1;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: scaleY(2);
+    opacity: 0;
+    transition: 0.3s;
+    color: black;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: black;
+    transform: scale(0);
+    opacity: 0;
+    transition: 0.3s;
+    z-index: -1;
+    
+}
+
+.nav-links a:hover {
+    color: black;
+}
+
+.nav-links a:hover::before {
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.nav-links a:hover::after {
+    transform: scale(1);
+    opacity: 1;
+    color: black;
+}
+.nav-links a:focus {
+    outline: none;
+    text-decoration: none;
+    color: white;
+}
+
+
+/* Active link styles */
+.nav-links a.active {
+    color: black;
+    text-decoration: none;
+}
+
+.nav-links a.active::before,
+.nav-links a.active::after {
+    transform: scale(1);
+    opacity: 1;
+    text-decoration: none;
+}
+
+.left-login-image, .right-login-image {
+    display: flex;
+    align-items: center;
+}
+@media screen and (max-width: 770px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive .nav-links {
+        display: block;
+        width: 100%;
+    }
+
+    .topnav.responsive a {
+        display: block;
+        text-align: left;
+    }
+
+    .left-login-image {
+        position: absolute;
+        left: 16px;
+        top: 8px;
+    }
+
+    .right-login-image {
+        position: absolute;
+        right: 16px;
+        top: 8px;
+    }
+}

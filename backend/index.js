@@ -1,62 +1,40 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-//demo
+const technologyRoutes = require('./Technology/technology'); 
+const categoriesRoutes = require('./ProductCategory/category');
+const productRoutes = require('./Products/products');
+const userRoutes = require('./User/user');
+const adminRoutes=require('./Admin/admin');
+const cartRoutes=require('./Cart/cart');
+const pendingOrders=require('./Orders/Orders');
+const messages=require('./ContactUs/message');
+
 const app = express();
 const port = 5000;
 
+// Middleware
 app.use(express.json());
-app.use(cors()); 
-mongoose.connect("mongodb://localhost:27017/griculture");
+app.use(cors());
 
-const technologyModel=require('./technology');
-
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
-app.get("/technology", (req, res) => {
-    technologyModel.find({}).then(function (form_data) {
-        if (form_data.length > 0) {
-            res.json(form_data);
-        } else {
-            res.status(404).json({ message: "No orders found" });
-        }
-    }).catch(function (err) {
-        console.error("Error fetching orders:", err);
-        res.status(500).json({ message: "Internal server error" });
-    });
+// Connect to MongoDB
+mongoose.connect("mongodb+srv://sanketbhimani92:sanketatlas9@cluster0.jh7pq.mongodb.net/Agriculture_Database?retryWrites=true&w=majority&appName=Cluster0").then(() => {
+    console.log("Connected to MongoDB");
+}).catch((error) => {
+    console.error("Error connecting to MongoDB:", error);
 });
 
-app.post("/add-tech", async (req, res) => {
-    const { image, title, description } = req.body;
-    try {
-        const technologySchema = new technologyModel({
-            image: image,
-            title: title,
-            description: description
-        });
-        const savedContact = await technologySchema.save();
-        res.send(savedContact);
-    } catch (error) {
-        console.error("Error saving contact:", error);
-        res.status(500).send("Error saving contact");
-    }
-});
+// Use the all routes
+app.use(technologyRoutes);
+app.use(categoriesRoutes);
+app.use(productRoutes);
+app.use(userRoutes);
+app.use(adminRoutes);
+app.use(cartRoutes);
+app.use(pendingOrders);
+app.use(messages);
 
-app.delete("/delete-tech/:id",async(req,res)=>{
-    try {
-        const deletedTech = await technologyModel.findByIdAndDelete(req.params.id);
-        if (deletedTech) {
-            res.json({ message: "Technology deleted successfully" });
-        } else {
-            res.status(404).json({ message: "Technology not found" });
-        }
-    } catch (error) {
-        console.error("Error deleting Technology:", error);
-        res.status(500).json({ message: "Internal server error" });
-    }
-})
-
+// Start the server
 app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
+    console.log(`Server is running  at http://localhost:${port}`);
 });

@@ -1,0 +1,107 @@
+/* Main container */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #f9f9f9; */
+    background-color: #EAF5F1 !important;
+}
+
+/* Contact box styling */
+.contact-box {
+    display: flex;
+    width: 80%;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+/* Left side form styling */
+.contact-form {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.inp-bg {
+    margin-bottom: 15px;
+}
+
+.inp-bg label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+.inp-bg input,
+.inp-bg textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #bfdebf!important;
+}
+.inp-bg:focus{
+    border: 2px solid green !important;
+}
+.inp-bg textarea {
+    resize: none;
+    height: 100px;
+}
+
+.send-button {
+    padding: 10px 20px;
+    background-color: rgb(30, 136, 30);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.send-button:hover {
+    background-color: darkmagenta;
+}
+
+/* Right side image styling */
+.contact-image {
+    flex: 1;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.contact-container {
+    /* background-image: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+    ), url("https://img.freepik.com/free-photo/top-view-office-elements_1921-146.jpg");
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    background-repeat: no-repeat; 
+    height: 92vh; */
+    background-color: #d1d1d1;
+}
